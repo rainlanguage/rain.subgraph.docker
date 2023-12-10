@@ -1,0 +1,10 @@
+version: '4'
+
+include:
+  - graph-node/docker/docker-compose.yml
+
+services:
+  evm_node:
+    image: vishalkale151071/hardhat-node
+    ports:
+      - '8545:8545'
