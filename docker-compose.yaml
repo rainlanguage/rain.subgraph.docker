@@ -5,6 +5,6 @@ include:
 
 services:
   evm_node:
-    image: vishalkale151071/hardhat-node
+    build: ./ethnode
     ports:
       - '8545:8545'

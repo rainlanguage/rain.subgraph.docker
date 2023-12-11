@@ -1,0 +1,13 @@
+{
+    "name": "hardhat-dockerfile",
+    "version": "1.0.0",
+    "description": "hardhat node for subgraph testing",
+    "scripts": {
+      "start": "hardhat node --hostname 0.0.0.0"
+    },
+    "author": "vishalkale151071",
+    "license": "CAL",
+    "dependencies": {
+      "hardhat": "^2.19.2"
+    }
+  }
