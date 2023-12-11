@@ -1,0 +1,17 @@
+{
+  "name": "subgraph",
+  "description": "Subgraph setup",
+  "version": "1.0.0",
+  "author": "rainlanguage",
+  "license": "CAL",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-ts": "=0.32.0"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "=0.63.0"
+  }
+}
