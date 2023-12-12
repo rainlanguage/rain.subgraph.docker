@@ -19,10 +19,10 @@ jobs:
 
       - name: Build ethnode
         run: |
-          docker build -t subgraph.ethnode ./ethnode
-          docker push subgraph.ethnode
+          docker build -t rainprotocol/subgraph.ethnode ./ethnode
+          docker push rainprotocol/subgraph.ethnode
 
       - name: Build subgraph-cli
         run: |
-          docker build -t subgraph.subgraph-cli ./subgraph-cli
-          docker push subgraph.subgraph-cli
+          docker build -t rainprotocol/subgraph.subgraph-cli ./subgraph-cli
+          docker push rainprotocol/subgraph.subgraph-cli
