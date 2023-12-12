@@ -26,6 +26,11 @@ jobs:
         id: build
         working-directory: example
 
+      - name: Upgrade docker
+        run: |
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sudo sh get-docker.sh
+
       - name: Docker compose version
         run: docker-compose version
         working-directory: example
