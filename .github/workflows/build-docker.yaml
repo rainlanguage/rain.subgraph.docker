@@ -13,8 +13,10 @@ jobs:
 
       - name: Build ethnode
         run: |
-          docker build -t ethnode ./ethnode
+          docker build -t subgraph.ethnode ./ethnode
+          docker push -t subgraph.ethnode
 
       - name: Build subgraph-cli
         run: |
-          docker build -t subgraph-cli ./subgraph-cli
+          docker build -t subgraph.subgraph-cli ./subgraph-cli
+          docker push -t subgraph.subgraph-cli
