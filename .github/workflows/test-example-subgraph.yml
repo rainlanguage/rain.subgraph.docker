@@ -30,8 +30,6 @@ jobs:
       # https://docs.docker.com/engine/install/ubuntu/
       - name: Upgrade docker
         run: |
-            service docker.socket stop
-            service docker stop
             sudo apt-get update
             sudo apt-get install ca-certificates curl gnupg
             sudo install -m 0755 -d /etc/apt/keyrings
