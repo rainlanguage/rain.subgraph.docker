@@ -1,4 +1,4 @@
-name: Test example contracts
+name: Test example subgraph
 
 on: [push]
 
@@ -6,11 +6,8 @@ env:
   FOUNDRY_PROFILE: ci
 
 jobs:
-  check:
-    strategy:
-      fail-fast: true
-
-    name: Foundry project
+  test-example-subgraph:
+    name: Test example subgraph
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,6 +24,10 @@ jobs:
           forge --version
           forge build --sizes
         id: build
+        working-directory: example
+
+      - name: Docker compose version
+        run: docker-compose version
         working-directory: example
 
       - name: Docker compose up
