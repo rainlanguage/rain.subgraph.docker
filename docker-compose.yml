@@ -5,9 +5,6 @@ include:
 
 services:
   evm_node:
-    build: ./ethnode
+    image: rainprotocol/subgraph.ethnode
     ports:
       - '8545:8545'
-
-  subgraph_cli:
-    build: ./subgraph-cli
