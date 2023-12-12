@@ -8,3 +8,6 @@ services:
     build: ./ethnode
     ports:
       - '8545:8545'
+
+  subgraph_cli:
+    build: ./subgraph-cli
