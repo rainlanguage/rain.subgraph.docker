@@ -17,7 +17,7 @@ dataSources:
     - Logger
     abis:
     - name: Logger
-      file: './out/Logger.sol/Logger.json'
+      file: '../out/Logger.sol/Logger.json'
     eventHandlers:
     - event: Log(bytes)
       handler: handleLog
