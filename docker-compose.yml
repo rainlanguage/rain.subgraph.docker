@@ -1,0 +1,10 @@
+version: '4'
+
+include:
+  - path: graph-node/docker/docker-compose.yml
+
+services:
+  eth-node:
+    image: rainprotocol/subgraph.ethnode
+    ports:
+      - '8545:8545'

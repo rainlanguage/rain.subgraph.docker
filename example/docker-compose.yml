@@ -1,0 +1,17 @@
+version: '4'
+
+include:
+  # You could get this from a submodule in a real repo.
+  - ../docker-compose.yml
+
+services:
+  # The subgraph cli as a box that we can mount our code into as a volume.
+  subgraph-cli:
+    image: rainprotocol/subgraph.subgraph-cli
+    profiles: ["subgraph-cli"]
+    # Normally this file would be in the root of the repo rather than an
+    # `example` subdirectory. We mount the repo as a volume in the service that
+    # has the subgraph cli so it can build everything needed.
+    volumes:
+      - ./:/repo
+    working_dir: /repo
