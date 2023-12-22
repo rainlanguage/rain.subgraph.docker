@@ -1,7 +1,10 @@
 version: '4'
 
 include:
-  - graph-node/docker/docker-compose.yml
+  - path: graph-node/docker/docker-compose.yml
+    environment:
+      ethereum: 'mainnet:http://evm_node:8545'
+
 
 services:
   evm_node:
