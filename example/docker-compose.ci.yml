@@ -2,4 +2,4 @@ version: '3'
 services:
   graph-node:
     environment:
-      ethereum: 'mainnet:http://ethnode:8545'
+      ethereum: 'localhost:http://ethnode:8545'
