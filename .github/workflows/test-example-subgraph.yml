@@ -49,7 +49,7 @@ jobs:
         working-directory: example
 
       - name: Deploy the subgraph
-        run: docker compose run -w /repo/subgraph subgraph-cli graph deploy --endpoint http://graph-node:8020 --subgraph-name "example/test"
+        run: docker compose run -w /repo/subgraph subgraph-cli graph deploy --node http://graph-node:8020
         working-directory: example
 
       - name: Docker compose down
