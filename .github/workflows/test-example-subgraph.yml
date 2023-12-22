@@ -50,6 +50,7 @@ jobs:
 
       - name: Deploy the subgraph
         run: |
+          set -x
           sleep 30
           docker ps
           docker logs example-graph-node-1
