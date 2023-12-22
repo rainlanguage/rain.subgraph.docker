@@ -33,7 +33,7 @@ jobs:
         working-directory: example
 
       - name: Docker compose up
-        run: docker compose up -f docker-compose.yml -f docker-compose.ci.yml -d
+        run: docker compose -f docker-compose.yml -f docker-compose.ci.yml up -d
         working-directory: example
 
       - name: npm install for the graph cli service
