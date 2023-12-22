@@ -45,7 +45,7 @@ jobs:
         working-directory: example
 
       - name: Build the subgraph
-        run: docker compose run -w /repo/subgraph subgraph-cli graph build --network mainnet
+        run: docker compose run -w /repo/subgraph subgraph-cli graph build
         working-directory: example
 
       - name: Deploy the subgraph
