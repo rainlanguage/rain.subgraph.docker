@@ -4,7 +4,7 @@ include:
   - path: graph-node/docker/docker-compose.yml
 
 services:
-  ethnode:
+  eth-node:
     image: rainprotocol/subgraph.ethnode
     ports:
       - '8545:8545'

@@ -2,4 +2,5 @@ version: '3'
 services:
   graph-node:
     environment:
-      ethereum: 'localhost:http://ethnode:8545'
+      # localhost is the default network name used by the subgraph cli
+      ethereum: 'localhost:http://eth-node:8545'
