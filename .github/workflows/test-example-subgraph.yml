@@ -40,6 +40,10 @@ jobs:
         run: docker compose run -w /repo/subgraph subgraph-cli npm install
         working-directory: example
 
+      - name: Codegen from subgraph
+        run: docker compose run -w /repo/subgraph subgraph-cli graph codegen
+        working-directory: example
+
       - name: Build the subgraph
         run: docker compose run -w /repo/subgraph subgraph-cli graph build
         working-directory: example

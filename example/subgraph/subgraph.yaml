@@ -21,4 +21,4 @@ dataSources:
     eventHandlers:
     - event: Log(bytes)
       handler: handleLog
-    file: './subgraph/log.ts'
+    file: './log.ts'
