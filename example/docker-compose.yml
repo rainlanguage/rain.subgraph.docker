@@ -7,7 +7,7 @@ include:
 services:
   # The subgraph cli as a box that we can mount our code into as a volume.
   subgraph-cli:
-    image: node:21
+    image: rainprotocol/subgraph.subgraph-cli
     profiles: ["subgraph-cli"]
     # Normally this file would be in the root of the repo rather than an
     # `example` subdirectory. We mount the repo as a volume in the service that
