@@ -7,4 +7,4 @@ RUN anvil --version
 EXPOSE 8545
 
 # Run anvil
-CMD ["anvil"]
+CMD ["anvil", "--host", "0.0.0.0"]
