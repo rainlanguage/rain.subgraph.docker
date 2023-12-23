@@ -51,6 +51,8 @@ jobs:
       - name: Deploy the subgraph
         run: |
           docker ps
+          docker compose logs example-evm-node-1
+          docker compose logs example-graph-node-1
           docker compose run -w /repo/subgraph subgraph-cli graph create --node http://graph-node:8020 example/test
           docker compose run -w /repo/subgraph subgraph-cli graph deploy --node http://graph-node:8020 --ipfs http://ipfs:5001 -l "v0.0.0" example/test
         working-directory: example
