@@ -9,6 +9,8 @@ jobs:
   test-example-subgraph:
     name: Test example subgraph
     runs-on: ubuntu-latest
+    env:
+      DEPLOYMENT_KEY: ${{ github.ref == 'refs/heads/main' && secrets.PRIVATE_KEY || secrets.PRIVATE_KEY_DEV }}
     defaults:
       run:
         working-directory: example
