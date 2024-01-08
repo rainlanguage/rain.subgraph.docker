@@ -42,6 +42,7 @@ jobs:
 
       - name: Deploy contracts to ethnode
         run: nix run .#rainix-sol-artifacts
+        working-directory: example
 
       - name: Docker compose down
         run: docker compose down
