@@ -44,6 +44,8 @@ jobs:
 
       - name: Deploy contracts to ethnode
         run: nix run .#rainix-sol-artifacts
+        env:
+          ETH_RPC_URL: http://localhost:8545
 
       - name: Docker compose down
         run: docker compose down
