@@ -1,0 +1,7 @@
+[package]
+name = "rain_subgraph_example_cli"
+version = "0.0.0"
+edition = "2021"
+license = "CAL-1.0"
+description = "Rain subgraph example CLI."
+
