@@ -46,6 +46,9 @@ jobs:
         run: nix run .#rainix-sol-artifacts
         env:
           ETH_RPC_URL: http://localhost:8545
+          # Key for standard test mnemonic at index 0.
+          # "test test test test test test test test test test test junk"
+          DEPLOYMENT_KEY: "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"
 
       - name: Docker compose down
         run: docker compose down
