@@ -26,3 +26,8 @@ jobs:
         run: |
           docker build -t rainprotocol/subgraph.subgraph-cli ./subgraph-cli
           docker push rainprotocol/subgraph.subgraph-cli
+
+      - name: Build matchstick
+        run: |
+          docker build -t rainprotocol/matchstick ./matchstick
+          docker push rainprotocol/matchstick
