@@ -2,6 +2,9 @@ name: Build docker
 
 on: [push]
 
+env:
+  CHANNEL: ${{ inputs.tag || github.head_ref || github.ref_name }}
+
 jobs:
   build-docker:
     name: Build docker
