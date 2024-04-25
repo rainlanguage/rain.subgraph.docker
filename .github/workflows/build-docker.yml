@@ -22,15 +22,15 @@ jobs:
 
       - name: Build ethnode
         run: |
-          docker build -t rainprotocol/subgraph.ethnode ./ethnode
+          docker build -t rainprotocol/subgraph.ethnode:${{ env.CHANNEL }} ./ethnode
           docker push rainprotocol/subgraph.ethnode
 
       - name: Build subgraph-cli
         run: |
-          docker build -t rainprotocol/subgraph.subgraph-cli ./subgraph-cli
+          docker build -t rainprotocol/subgraph.subgraph-cli:${{ env.CHANNEL }} ./subgraph-cli
           docker push rainprotocol/subgraph.subgraph-cli
 
       - name: Build matchstick
         run: |
-          docker build -t rainprotocol/matchstick ./matchstick
+          docker build -t rainprotocol/matchstick:${{ env.CHANNEL }} ./matchstick
           docker push rainprotocol/matchstick
