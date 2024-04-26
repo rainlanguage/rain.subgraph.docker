@@ -1,11 +1,6 @@
 name: Build docker
 
-on:
-  push:
-    branches:
-      - main
-    tags:
-      - '*'
+on: [push]
 
 env:
   CHANNEL: ${{ inputs.tag || github.head_ref || github.ref_name }}
@@ -27,15 +22,15 @@ jobs:
 
       - name: Build ethnode
         run: |
-          docker build -t rainprotocol/subgraph.ethnode:${{ env.CHANNEL }} -t rainprotocol/subgraph.ethnode:latest ./ethnode
-          docker push rainprotocol/subgraph.ethnode
+          docker build -t rainprotocol/subgraph.ethnode:${{ env.CHANNEL }} ./ethnode
+          docker push rainprotocol/subgraph.ethnode:${{ env.CHANNEL }}
 
       - name: Build subgraph-cli
         run: |
-          docker build -t rainprotocol/subgraph.subgraph-cli:${{ env.CHANNEL }} -t rainprotocol/subgraph.subgraph-cli:latest ./subgraph-cli
-          docker push rainprotocol/subgraph.subgraph-cli
+          docker build -t rainprotocol/subgraph.subgraph-cli:${{ env.CHANNEL }} ./subgraph-cli
+          docker push rainprotocol/subgraph.subgraph-cli:${{ env.CHANNEL }}
 
       - name: Build matchstick
         run: |
-          docker build -t rainprotocol/matchstick:${{ env.CHANNEL }} -t rainprotocol/matchstick:latest ./matchstick
-          docker push rainprotocol/matchstick
+          docker build -t rainprotocol/matchstick:${{ env.CHANNEL }} ./matchstick
+          docker push rainprotocol/matchstick:${{ env.CHANNEL }}
