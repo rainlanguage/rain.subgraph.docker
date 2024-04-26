@@ -1,6 +1,12 @@
 name: Build docker
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to give the build. Try to make it unique.'
+        required: true
 
 env:
   CHANNEL: ${{ inputs.tag || github.head_ref || github.ref_name }}
