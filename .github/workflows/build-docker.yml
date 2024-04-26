@@ -2,11 +2,10 @@ name: Build docker
 
 on:
   push:
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Tag to give the build. Try to make it unique.'
-        required: true
+    branches:
+      - main
+    tags:
+      - '*'
 
 env:
   CHANNEL: ${{ inputs.tag || github.head_ref || github.ref_name }}
@@ -28,15 +27,15 @@ jobs:
 
       - name: Build ethnode
         run: |
-          docker build -t rainprotocol/subgraph.ethnode:${{ env.CHANNEL }} ./ethnode
+          docker build -t rainprotocol/subgraph.ethnode:${{ env.CHANNEL }} -t rainprotocol/subgraph.ethnode:latest ./ethnode
           docker push rainprotocol/subgraph.ethnode
 
       - name: Build subgraph-cli
         run: |
-          docker build -t rainprotocol/subgraph.subgraph-cli:${{ env.CHANNEL }} ./subgraph-cli
+          docker build -t rainprotocol/subgraph.subgraph-cli:${{ env.CHANNEL }} -t rainprotocol/subgraph.subgraph-cli:latest ./subgraph-cli
           docker push rainprotocol/subgraph.subgraph-cli
 
       - name: Build matchstick
         run: |
-          docker build -t rainprotocol/matchstick:${{ env.CHANNEL }} ./matchstick
+          docker build -t rainprotocol/matchstick:${{ env.CHANNEL }} -t rainprotocol/matchstick:latest ./matchstick
           docker push rainprotocol/matchstick
