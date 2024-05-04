@@ -14,8 +14,6 @@ WORKDIR /
 RUN curl -OL https://github.com/LimeChain/matchstick/releases/download/0.6.0/binary-linux-22 \
     && chmod a+x binary-linux-22
 
-RUN npm install -g @graphprotocol/graph-cli
-
 RUN mkdir -p matchstick/subgraph
 WORKDIR /matchstick/subgraph
 
