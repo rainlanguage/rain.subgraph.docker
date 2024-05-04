@@ -12,6 +12,7 @@ RUN apt update \
 # RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
 #     && sudo apt-get install -y nodejs
 
+WORKDIR /
 RUN curl -OL https://github.com/LimeChain/matchstick/releases/download/0.6.0/binary-linux-22 \
     && chmod a+x binary-linux-22
 
@@ -20,4 +21,4 @@ RUN npm install -g @graphprotocol/graph-cli
 RUN mkdir -p matchstick/subgraph
 WORKDIR /matchstick/subgraph
 
-CMD ../binary-linux-22 ${ARGS}
+CMD /binary-linux-22 ${ARGS}
