@@ -13,6 +13,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
 RUN curl -OL https://github.com/LimeChain/matchstick/releases/download/v0.6.0/binary-linux-22 \
   && chmod a+x binary-linux-22
 
+RUN npm install -g @graphprotocol/graph-cli
+
 RUN mkdir matchstick
 WORKDIR /matchstick
 
