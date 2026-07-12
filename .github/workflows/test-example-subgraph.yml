@@ -21,10 +21,11 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      - uses: rainlanguage/rainix/.github/actions/nix-cachix-setup@main
-        with:
-          checkout: 'false'
-          cachix-auth-token: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      # This repo keeps its flake in submodules (no root flake.nix/flake.lock), so the
+      # shared nix-cachix-setup composite's cache-nix-action step cannot hash `**/*.nix`
+      # and fails. Per the issue's fallback, install Nix via the org-pinned
+      # nix-quick-install-action directly (same SHA the composite pins) instead.
+      - uses: nixbuild/nix-quick-install-action@5bb6a3b3abe66fd09bbf250dce8ada94f856a703 # v30
 
       - run: nix develop --command rainix-rs-prelude
       - run: nix develop --command rainix-sol-prelude
