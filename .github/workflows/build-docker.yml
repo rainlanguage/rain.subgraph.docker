@@ -20,10 +20,10 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build ethnode
+      - name: Build evm-node
         run: |
-          docker build -t rainprotocol/subgraph.ethnode:${{ env.CHANNEL }} ./ethnode
-          docker push rainprotocol/subgraph.ethnode:${{ env.CHANNEL }}
+          docker build -t rainprotocol/subgraph.evm-node:${{ env.CHANNEL }} ./evm-node
+          docker push rainprotocol/subgraph.evm-node:${{ env.CHANNEL }}
 
       - name: Build subgraph-cli
         run: |
